@@ -1,0 +1,436 @@
+import pygame
+import RPi.GPIO as GPIO, time
+
+GPIO.setmode(GPIO.BOARD)
+
+GPIO.setup(11, GPIO.OUT)
+GPIO.output(11, False)
+GPIO.setup(13,  GPIO.OUT)
+GPIO.output(13, False)
+GPIO.setup(15,  GPIO.OUT)
+GPIO.output(15, False)
+GPIO.setup(29,  GPIO.OUT)
+GPIO.output(29, False)
+GPIO.setup(16,  GPIO.OUT)
+GPIO.output(16, False)
+GPIO.setup(18,  GPIO.OUT)
+GPIO.output(18, False)
+GPIO.setup(22,  GPIO.OUT)
+GPIO.output(22, False)
+GPIO.setup(32,  GPIO.OUT)
+GPIO.output(32, False)
+
+pygame.mixer.init()
+pygame.mixer.music.load("/home/pi/christmassongs/LAST CHRISTMAS (Trap Remix).mp3")
+pygame.mixer.music.play()
+
+x = 1.52766
+
+def on1():
+    GPIO.output(11, True)
+
+def on2():
+    GPIO.output(13, True)
+
+def on3():
+    GPIO.output(15, True)
+
+def on8():
+    GPIO.output(29, True)
+
+def on4():
+    GPIO.output(16, True)
+    
+def on5():
+    GPIO.output(18, True)
+    
+def on6():
+    GPIO.output(22, True)
+    
+def on7():
+    GPIO.output(32, True)
+
+def off1():
+    GPIO.output(11, False)
+
+def off2():
+    GPIO.output(13, False)
+
+def off3():
+    GPIO.output(15, False)
+
+def off4():
+    GPIO.output(16, False)
+
+def off5():
+    GPIO.output(18, False)
+    
+def off6():
+    GPIO.output(22, False)
+    
+def off7():
+    GPIO.output(32, False)
+    
+def off8():
+    GPIO.output(29, False)
+    
+def sleep(a):
+    time.sleep(a*x)
+
+def allon():
+    on1()
+    on2()
+    on3()
+    on4()
+    on5()
+    on6()
+    on7()
+    on8()
+    
+def alloff():
+    off1()
+    off2()
+    off3()
+    off4()
+    off5()
+    off6()
+    off7()
+    off8()
+    
+def cool1(s):
+    on1()
+    sleep(s*(1/32))
+    on2()
+    sleep(s*(1/32))
+    on3()
+    sleep(s*(1/32))
+    off1()
+    sleep(s*(1/32))
+    on4()
+    sleep(s*(1/32))
+    off2()
+    sleep(s*(1/32))
+    on5()
+    sleep(s*(1/32))
+    off3()
+    sleep(s*(1/32))
+    on6()
+    sleep(s*(1/32))
+    off4()
+    sleep(s*(1/32))
+    on7()
+    sleep(s*(1/32))
+    off5()
+    sleep(s*(1/32))
+    on8()
+    sleep(s*(1/32))
+    off6()
+    sleep(s*(1/32))
+    off7()
+    sleep(s*(1/32))
+    off8()
+    sleep(s*(1/32))
+    
+def cool2(t):
+    on8()
+    sleep(t*(1/32))
+    on7()
+    sleep(t*(1/32))
+    on6()
+    sleep(t*(1/32))
+    off8()
+    sleep(t*(1/32))
+    on5()
+    sleep(t*(1/32))
+    off7()
+    sleep(t*(1/32))
+    on4()
+    sleep(t*(1/32))
+    off6()
+    sleep(t*(1/32))
+    on3()
+    sleep(t*(1/32))
+    off5()
+    sleep(t*(1/32))
+    on2()
+    sleep(t*(1/32))
+    off4()
+    sleep(t*(1/32))
+    on1()
+    sleep(t*(1/32))
+    off3()
+    sleep(t*(1/32))
+    off2()
+    sleep(t*(1/32))
+    off1()
+    sleep(t*(1/32))
+
+def cool3(u):
+    on4()
+    on5()
+    sleep(u*(1/32))
+    sleep(u*(1/32))
+    on3()
+    on6()
+    sleep(u*(1/32))
+    sleep(u*(1/32))
+    on2()
+    on7()
+    sleep(u*(1/32))
+    sleep(u*(1/32))
+    on1()
+    on8()
+    sleep(u*(1/32))
+    sleep(u*(1/32))
+    alloff()
+
+def cool4(v):
+    on1()
+    on8()
+    sleep(v*(1/32))
+    sleep(v*(1/32))
+    on2()
+    on7()
+    sleep(v*(1/32))
+    sleep(v*(1/32))
+    on3()
+    on6()
+    sleep(v*(1/32))
+    sleep(v*(1/32))
+    on4()
+    on5()
+    sleep(v*(1/32))
+    sleep(v*(1/32))
+    alloff()
+    
+def cool5(z):
+    sleep(z*(1/32))
+    on1()
+    sleep(z*(1/32))
+    off1()
+    sleep(z*(1/32))
+    on2()
+    sleep(z*(1/32))
+    off2()
+    sleep(z*(1/32))
+    on3()
+    sleep(z*(1/32))
+    off3()
+    sleep(z*(1/32))
+    on4()
+    sleep(z*(1/32))
+    off4()
+    sleep(z*(1/32))
+    on5()
+    sleep(z*(1/32))
+    off5()
+    sleep(z*(1/32))
+    on6()
+    sleep(z*(1/32))
+    off6()
+    sleep(z*(1/32))
+    on7()
+    sleep(z*(1/32))
+    off7()
+    sleep(z*(1/32))
+    on8()
+    sleep(z*(1/32))
+    off8()
+
+def cool6(y):
+    sleep(y*(1/32))
+    on8()
+    sleep(y*(1/32))
+    off8()
+    sleep(y*(1/32))
+    on7()
+    sleep(y*(1/32))
+    off7()
+    sleep(y*(1/32))
+    on6()
+    sleep(y*(1/32))
+    off6()
+    sleep(y*(1/32))
+    on5()
+    sleep(y*(1/32))
+    off5()
+    sleep(y*(1/32))
+    on4()
+    sleep(y*(1/32))
+    off4()
+    sleep(y*(1/32))
+    on3()
+    sleep(y*(1/32))
+    off3()
+    sleep(y*(1/32))
+    on3()
+    sleep(y*(1/32))
+    off3()
+    sleep(y*(1/32))
+    on2()
+    sleep(y*(1/32))
+    off2()
+    sleep(y*(1/32))
+    on1()
+    sleep(y*(1/32))
+    off1()
+
+alloff()
+sleep(8.6)
+
+for a in range(8):
+    cool1(1)
+    cool2(1)
+
+for a in range(8):
+    cool1(1/2)
+    cool2(1/2)
+
+    
+for a in range(8):
+    cool1(1/4)
+    cool2(1/4)
+    
+for a in range(8):
+    cool1(1/8)
+    cool2(1/8)
+    
+allon()
+off1()
+off2()
+sleep(1/4)
+off3()
+off4()
+sleep(1/4)
+off5()
+off6()
+sleep(1/4)
+off7()
+off8()
+sleep(1/4)
+
+for a in range(4):
+    cool5(1/2)
+    cool6(1/2)
+    sleep(1/2)
+    
+for a in range(4):
+    cool6(1/2)
+    cool5(1/2)
+    sleep(1/2)
+    
+for a in range(4):
+    cool3(2)
+    sleep(1/2)
+    
+for a in range(4):
+    cool4(2)
+    sleep(1/2)
+    
+for a in range(4):
+    cool3(2)
+    sleep(1/2)
+    
+for a in range(4):
+    cool4(2)
+    sleep(1/2)
+    
+for a in range(8):
+    cool1(1/2)
+    cool2(1/2)
+
+    
+for a in range(8):
+    cool1(1/4)
+    cool2(1/4)
+    
+for a in range(8):
+    cool1(1/8)
+    cool2(1/8)
+   
+    
+for a in range(4):
+    cool3(1)
+    
+sleep(1/8)
+allon()
+
+for a in range(3):
+    sleep(1/8)
+    alloff()
+    sleep(1/8)
+    allon()
+    sleep(1/8)
+    alloff()
+    sleep(1/8)
+    allon()
+    sleep(1/8)
+    alloff()
+    sleep(1/8)
+    allon()
+    sleep(1/8)
+    alloff()
+    sleep(1/8)
+    allon()
+    sleep(1/8)
+    alloff()
+    sleep(1/8)
+    allon()
+    sleep(1/8)
+    alloff()
+    sleep(1/8)
+    allon()
+    sleep(1/12)
+    alloff()
+    sleep(1/12)
+    allon()
+    sleep(1/12)
+    alloff()
+    sleep(1/12)
+    allon()
+    sleep(1/12)
+    alloff()
+    sleep(1/12)
+    allon()
+    sleep(1/12)
+
+sleep(1/8)
+alloff()
+sleep(1/8)
+allon()
+sleep(1/8)
+alloff()
+sleep(1/8)
+allon()
+sleep(1/8)
+alloff()
+sleep(1/8)
+allon()
+sleep(1/8)
+alloff()
+
+sleep(1)
+for a in range(4):
+    cool3(2)
+    sleep(1/2)
+    
+for a in range(4):
+    cool4(2)
+    sleep(1/2)
+    
+for a in range(8):
+    cool1(2)
+    cool2(2)
+    
+for a in range(4):
+    cool5(1/2)
+    cool6(1/2)
+    sleep(1/2)
+    
+for a in range(3):
+    cool6(1/2)
+    cool5(1/2)
+    sleep(1/2)
+    
+sleep(3)
+allon()
