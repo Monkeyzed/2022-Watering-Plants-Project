@@ -1,6 +1,8 @@
+# import statements
 import pygame
 import RPi.GPIO as GPIO, time
 
+# setting up general-purpose input/output (GPIO) to the 8-channel relay from the raspberry pi
 GPIO.setmode(GPIO.BOARD)
 
 GPIO.setup(11, GPIO.OUT)
@@ -20,12 +22,15 @@ GPIO.output(22, False)
 GPIO.setup(32,  GPIO.OUT)
 GPIO.output(32, False)
 
+# playing the music
 pygame.mixer.init()
 pygame.mixer.music.load("/home/pi/christmassongs/LAST CHRISTMAS (Trap Remix).mp3")
 pygame.mixer.music.play()
 
+# setting up beats per second for the rest of the code
 x = 1.52766
 
+# defining procedures for the rest of the code
 def on1():
     GPIO.output(11, True)
 
@@ -275,6 +280,7 @@ def cool6(y):
     sleep(y*(1/32))
     off1()
 
+# start of main code
 alloff()
 sleep(8.6)
 
