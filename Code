@@ -1,0 +1,144 @@
+# import statements
+import pygame
+import RPi.GPIO as GPIO, time
+
+# setting up general-purpose input/output (GPIO) to the 8-channel relay from the raspberry pi
+GPIO.setmode(GPIO.BOARD)
+
+GPIO.setup(11, GPIO.OUT)
+GPIO.output(11, False)
+GPIO.setup(13,  GPIO.OUT)
+GPIO.output(13, False)
+GPIO.setup(15,  GPIO.OUT)
+GPIO.output(15, False)
+GPIO.setup(29,  GPIO.OUT)
+GPIO.output(29, False)
+GPIO.setup(16,  GPIO.OUT)
+GPIO.output(16, False)
+GPIO.setup(18,  GPIO.OUT)
+GPIO.output(18, False)
+GPIO.setup(22,  GPIO.OUT)
+GPIO.output(22, False)
+GPIO.setup(32,  GPIO.OUT)
+GPIO.output(32, False)
+GPIO.setup(36,  GPIO.OUT)
+GPIO.output(36, False)
+
+x = 12.5
+
+# defining procedures for the rest of the code
+def on1():
+    GPIO.output(11, True)
+    GPIO.output(36, True)
+
+def on2():
+    GPIO.output(13, True)
+    GPIO.output(36, True)
+
+def on3():
+    GPIO.output(15, True)
+    GPIO.output(36, True)
+
+def on8():
+    GPIO.output(29, True)
+    GPIO.output(36, True)
+
+def on4():
+    GPIO.output(16, True)
+    GPIO.output(36, True)
+    
+def on5():
+    GPIO.output(18, True)
+    GPIO.output(36, True)
+    
+def on6():
+    GPIO.output(22, True)
+    GPIO.output(36, True)
+    
+def on7():
+    GPIO.output(32, True)
+    GPIO.output(36, True)
+
+def off1():
+    GPIO.output(11, False)
+    GPIO.output(36, False)
+
+def off2():
+    GPIO.output(13, False)
+    GPIO.output(36, False)
+
+def off3():
+    GPIO.output(15, False)
+    GPIO.output(36, False)
+
+def off4():
+    GPIO.output(16, False)
+    GPIO.output(36, False)
+
+def off5():
+    GPIO.output(18, False)
+    GPIO.output(36, False)
+    
+def off6():
+    GPIO.output(22, False)
+    GPIO.output(36, False)
+    
+def off7():
+    GPIO.output(32, False)
+    GPIO.output(36, False)
+    
+def off8():
+    GPIO.output(29, False)
+    GPIO.output(36, False)
+    
+def sleep(a):
+    time.sleep(a*x)
+    
+# start of main code
+on1()
+sleep(1)
+off1()
+
+time.sleep(5)
+
+on2()
+sleep(.94)
+off2()
+
+time.sleep(5)
+
+on3()
+sleep(1.2)
+off3()
+
+time.sleep(5)
+
+on4()
+sleep(0.15)
+off4()
+
+time.sleep(5)
+
+on5()
+sleep(0.2)
+off5()
+
+time.sleep(5)
+
+on6()
+sleep(0.2)
+off6()
+
+time.sleep(5)
+
+on7()
+sleep(0.10)
+off7()
+
+time.sleep(5)
+
+on8()
+sleep(0.05)
+off8()
+
+
